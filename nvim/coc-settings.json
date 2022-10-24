@@ -1,0 +1,17 @@
+{
+  "suggest.noselect": false,
+  "tsserver.trace.server": "verbose",
+  "tsserver.log": "verbose",
+  "typescript.showUnused": false,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "json",
+    "css",
+    "markdown",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "git.enableGutters": true,
+  "javascript.suggestionActions.enabled": false
+}

@@ -1,0 +1,15 @@
+--sort-files
+--color
+--context=1
+--follow
+--group
+--smart-case
+
+--ignore-dir=.git
+--ignore-dir=coverage
+--ignore-dir=doc
+--ignore-dir=log
+--ignore-dir=logs
+--ignore-dir=tmp
+--ignore-dir=vendor
+--ignore-dir=target

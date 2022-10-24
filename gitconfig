@@ -1,0 +1,38 @@
+# This is Git's per-user configuration file.
+[user]
+  name = Russell Dunphy
+  email = russell@accurx.com
+
+[core]
+  editor = nvim
+  whitespace = trailing-space,space-before-tab
+  excludesfile = ~/.cvsignore
+
+[merge]
+  mergeoptions = --no-ff
+
+[alias]
+  co = checkout
+  c  = commit -v
+  ci = commit -m
+  ic = commit -m
+  aa = add -A
+  psuh = push
+  pretty = log --oneline --graph --decorate --all
+  please = push --force-with-lease
+  recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
+
+[push]
+  default = upstream
+
+[filter "lfs"]
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+
+[pull]
+  ff = only
+
+[init]
+  defaultBranch = main
