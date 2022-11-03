@@ -5,14 +5,17 @@ mkdir -p ~/.config
 # misc
 ln -sf $(pwd)/gitconfig ~/.gitconfig
 ln -sf $(pwd)/ackrc ~/.ackrc
+ln -sf $(pwd)/ignore ~/.ignore
+ln -sf $(pwd)/cvsignore ~/.cvsignore
 
 # fish
 mkdir -p ~/.config/fish
-ln -sf $(pwd)/fish/config.fish ~/.config/fish/config.fish
+cp $(pwd)/fish/config.fish ~/.config/fish/config.fish
 
 mkdir -p ~/.config/fish/functions
 ln -sf $(pwd)/fish/functions/git-trash.fish ~/.config/fish/functions/git-trash.fish
 ln -sf $(pwd)/fish/functions/gr.fish ~/.config/fish/functions/gr.fish
+ln -sf $(pwd)/fish/functions/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
 
 fish $(pwd)/fish/abbreviations.fish
 

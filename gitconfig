@@ -16,7 +16,7 @@
   c  = commit -v
   ci = commit -m
   ic = commit -m
-  aa = add -A
+  aa = add .
   psuh = push
   pretty = log --oneline --graph --decorate --all
   please = push --force-with-lease

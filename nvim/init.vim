@@ -116,3 +116,18 @@ source ~/.config/nvim/completions.vim
 source ~/.config/nvim/fzf.vim
 source ~/.config/nvim/prettier.vim
 source ~/.config/nvim/whitespace.vim
+
+function! OrganizeImports()
+  :call CocAction('runCommand', 'editor.action.organizeImport')
+  if match(join(getline(1,'$'), "\n"), "import.*React") == -1
+    let lineno = line(".")
+    let colno = col(".")
+    :normal! ggOimport React from "react";
+    :w
+    :call cursor(lineno + 1, colno)
+  endif
+endfunction
+:command! OrganizeImports :call OrganizeImports()
+
+map <leader>i :OrganizeImports<cr>
+
