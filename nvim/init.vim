@@ -15,10 +15,12 @@ Plug 'junegunn/vim-easy-align'
 Plug 'mhartington/oceanic-next'
 Plug 'mileszs/ack.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'qpkorr/vim-renamer'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 
@@ -61,6 +63,19 @@ let mapleader      = ","
 let maplocalleader = ","
 let g:mapleader    = ","
 nnoremap \ ,
+
+"" Projectionist.vim
+nmap <leader><leader> :A<CR>
+nmap <leader>ca :Eactions<CR>
+nmap <leader>cc :Ecomponent<CR>
+nmap <leader>cC :Econstants<CR>
+nmap <leader>ch :Ehooks<CR>
+nmap <leader>ci :Eindex<CR>
+nmap <leader>cr :Ereducer<CR>
+nmap <leader>cs :Estyles<CR>
+nmap <leader>ct :Etest<CR>
+nmap <leader>cT :Etypes<CR>
+nmap <leader>cd :e <C-R>=expand('%:h') . "/"<esc> <CR>
 
 "" disable ex mode
 nnoremap Q <nop>
