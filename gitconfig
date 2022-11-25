@@ -21,7 +21,7 @@
   psuh = push
   pretty = log --oneline --graph --decorate --all
   please = push --force-with-lease
-  recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
+	recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
 
 [push]
   default = upstream
@@ -37,3 +37,5 @@
 
 [init]
   defaultBranch = main
+[bash]
+	showUntrackedFiles = false
