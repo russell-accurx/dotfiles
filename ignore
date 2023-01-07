@@ -1,3 +1,5 @@
-build/static/
+build/
+dist/
 node_modules/
-
+.next/
+.yalc/

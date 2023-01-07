@@ -1,0 +1,67 @@
+command_timeout = 3000
+add_newline = false
+
+[directory.substitutions]
+'rosemary/src/Web/accuRx.Web.Design/' = '[accurx-design] '
+'rosemary/src/Web/accuRx.Web.Design' = '[accurx-design]'
+'rosemary/src/Web/accuRx.Web.Client.Shared/' = '[accurx-shared] '
+'rosemary/src/Web/accuRx.Web.Client.Shared' = '[accurx-shared]'
+'rosemary/src/Web/accuRx.Fleming.Client/ClientApp/' = '[fleming-client] '
+'rosemary/src/Web/accuRx.Fleming.Client/ClientApp' = '[fleming-client]'
+'rosemary/src/Web/accuRx.Florey.Client/ClientApp/' = '[florey-client] '
+'rosemary/src/Web/accuRx.Florey.Client/ClientApp' = '[florey-client]'
+'rosemary/src/Web/accuRx.PatientPortal.Client/ClientApp/' = '[patient-portal] '
+'rosemary/src/Web/accuRx.PatientPortal.Client/ClientApp' = '[patient-portal]'
+'rosemary/' = 'rosemary '
+'rosemary' = '[rosemary]'
+
+[cmd_duration]
+disabled = true
+
+[time]
+disabled = true
+
+[docker_context]
+disabled = true
+
+[dotnet]
+disabled = true
+
+[nodejs]
+symbol = " "
+format = '[$symbol]($style)'
+disabled = true
+
+[python]
+symbol = " "
+format = '[$symbol]($style)'
+disabled = true
+
+[git_branch]
+symbol = ""
+format = '[$symbol $branch ]($style)'
+
+[git_status]
+up_to_date = "✅ "
+ahead = "🔼 "
+behind = "🔽 "
+diverged = "🔀 "
+conflicted = "❌ "
+untracked = '[•$count ](yellow)'
+staged = '[•$count ](green)'
+stashed = ""
+modified = '[•$count ](blue)'
+renamed = ""
+deleted = '[•$count ](red)'
+style = "bright-white"
+format = "$ahead_behind$untracked$modified$deleted$staged"
+
+[character]
+success_symbol = "👉🏻"
+error_symbol = "👉🏻"
+
+[line_break]
+disabled = true
+
+[package]
+disabled = true

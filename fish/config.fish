@@ -17,3 +17,5 @@ set -gx CDPATH $CDPATH $HOME $HOME/Code
 
 # fzf
 set -gx FZF_DEFAULT_COMMAND 'rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*}"'
+
+starship init fish | source
