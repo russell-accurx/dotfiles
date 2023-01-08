@@ -1,7 +1,5 @@
 {
   "suggest.noselect": false,
-  "tsserver.trace.server": "verbose",
-  "tsserver.log": "verbose",
   "typescript.showUnused": false,
   "coc.preferences.formatOnSaveFiletypes": [
     "json",
@@ -12,6 +10,8 @@
     "typescript",
     "typescriptreact"
   ],
+  "coc.preferences.useQuickfixForLocations": false,
+  "coc.preferences.jumpCommand": "drop",
   "git.enableGutters": true,
   "javascript.suggestionActions.enabled": false
 }

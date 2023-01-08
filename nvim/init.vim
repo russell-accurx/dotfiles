@@ -23,6 +23,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
 call plug#end()
 
@@ -146,3 +150,8 @@ endfunction
 
 map <leader>i :OrganizeImports<cr>
 
+nmap gd :CocCommand tsserver.goToSourceDefinition<CR>
+
+lua require("./config")
+nnoremap <silent> <leader><space> :Telescope find_files<cr>
+nnoremap <silent> <leader>b :Telescope buffers<cr>
