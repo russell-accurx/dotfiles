@@ -155,3 +155,5 @@ nmap gd :CocCommand tsserver.goToSourceDefinition<CR>
 lua require("./config")
 nnoremap <silent> <leader><space> :Telescope find_files<cr>
 nnoremap <silent> <leader>b :Telescope buffers<cr>
+nnoremap <silent> <leader>f :Telescope live_grep<cr>
+nnoremap <silent> <leader>F :Telescope grep_string<cr>
