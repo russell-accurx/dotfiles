@@ -16,6 +16,6 @@ alias gpo 'git push -u origin (git rev-parse --abbrev-ref HEAD)'
 set -gx CDPATH $CDPATH $HOME $HOME/Code
 
 # fzf
-set -gx FZF_DEFAULT_COMMAND 'rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*}"'
+set -gx FZF_DEFAULT_COMMAND 'rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*,build/*,dist/*,.next/*,.yalc/*}"'
 
 starship init fish | source

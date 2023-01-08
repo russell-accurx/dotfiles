@@ -13,3 +13,6 @@
 --ignore-dir=tmp
 --ignore-dir=vendor
 --ignore-dir=target
+--ignore-dir=build
+--ignore-dir=dist
+--ignore-dir=.next
