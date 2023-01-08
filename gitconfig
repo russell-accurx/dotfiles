@@ -1,7 +1,6 @@
-# This is Git's per-user configuration file.
 [user]
   name = Russell Dunphy
-  email = russell@accurx.com
+  email = russell@russelldunphy.com
 
 [core]
   editor = nvim
@@ -37,5 +36,6 @@
 
 [init]
   defaultBranch = main
+
 [bash]
 	showUntrackedFiles = false
