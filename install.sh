@@ -13,8 +13,9 @@ mkdir -p ~/.config/fish
 ln -sf $(pwd)/fish/config.fish ~/.config/fish/config.fish
 
 mkdir -p ~/.config/fish/functions
-ln -sf $(pwd)/fish/functions/git-trash.fish ~/.config/fish/functions/git-trash.fish
-ln -sf $(pwd)/fish/functions/gr.fish ~/.config/fish/functions/gr.fish
+for f in `ls -1 $(pwd)/fish/functions`; do
+  ln -sf $(pwd)/fish/functions/$(basename $f) ~/.config/fish/functions/$(basename $f)
+done
 
 fish $(pwd)/fish/abbreviations.fish
 
