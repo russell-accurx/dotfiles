@@ -1,3 +1,3 @@
 function gr
-  gh pr create --fill
+  gh pr create --web
 end
