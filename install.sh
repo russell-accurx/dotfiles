@@ -17,6 +17,7 @@ for f in `ls -1 $(pwd)/fish/functions`; do
   ln -sf $(pwd)/fish/functions/$(basename $f) ~/.config/fish/functions/$(basename $f)
 done
 
+fish $(pwd)/fish/variables.fish
 fish $(pwd)/fish/abbreviations.fish
 
 ln -sf $(pwd)/starship.toml ~/.config/starship.toml
