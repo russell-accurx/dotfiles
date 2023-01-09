@@ -13,14 +13,8 @@ let g:loaded_netrwPlugin = 1
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'dag/vim-fish'
-" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" Plug 'junegunn/fzf.vim'
-" Plug 'junegunn/vim-easy-align'
 Plug 'mhartington/oceanic-next'
-" Plug 'mileszs/ack.vim'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'qpkorr/vim-renamer'
-" Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
@@ -38,9 +32,9 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-git'
-" Plug 'dense-analysis/ale'
 Plug 'jose-elias-alvarez/null-ls.nvim'
-" Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
+Plug 'windwp/nvim-autopairs'
+Plug 'windwp/nvim-ts-autotag'
 call plug#end()
 
 set termguicolors
