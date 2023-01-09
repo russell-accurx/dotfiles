@@ -19,7 +19,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
@@ -35,6 +34,8 @@ Plug 'hrsh7th/cmp-git'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'windwp/nvim-autopairs'
 Plug 'windwp/nvim-ts-autotag'
+Plug 'kylechui/nvim-surround'
+Plug 'pwntester/octo.nvim'
 call plug#end()
 
 set termguicolors
@@ -165,6 +166,8 @@ lua require("./init_tree")
 lua require("./init_telescope")
 lua require("./init_prettierd")
 lua require("./init_treesitter")
+lua require("./init_octo")
+
 nnoremap <silent> <leader><space> :Telescope find_files<cr>
 nnoremap <silent> <leader>b :Telescope buffers<cr>
 nnoremap <silent> <leader>f :Telescope live_grep<cr>
