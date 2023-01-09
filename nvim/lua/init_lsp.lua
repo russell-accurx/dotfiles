@@ -29,3 +29,27 @@ require('lspconfig')['tsserver'].setup{
   flags = lsp_flags,
   capabilities = capabilities
 }
+
+local signs = { Error = "", Warn = "", Hint = "", Info = "" }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
+local config = {
+  -- Enable virtual text
+  virtual_text = false,
+  -- show signs
+  signs = {
+    active = signs,
+  },
+  underline = true,
+  severity_sort = true,
+  float = { focusable = false, },
+}
+
+vim.diagnostic.config(config)
+
+vim.o.updatetime = 250
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+
