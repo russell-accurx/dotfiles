@@ -9,14 +9,14 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'dag/vim-fish'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-easy-align'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/vim-easy-align'
 Plug 'mhartington/oceanic-next'
-Plug 'mileszs/ack.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'mileszs/ack.vim'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'qpkorr/vim-renamer'
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
@@ -27,7 +27,16 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
-
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-tree/nvim-tree.lua'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-git'
+" Plug 'dense-analysis/ale'
+Plug 'jose-elias-alvarez/null-ls.nvim'
+" Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 call plug#end()
 
 set termguicolors
@@ -60,6 +69,7 @@ set smartcase
 set splitbelow
 set splitright
 set visualbell
+set signcolumn=yes
 
 colorscheme OceanicNext
 
@@ -129,31 +139,49 @@ cnoremap <C-b> <Left>
 cnoremap <M-f> <S-Right>
 cnoremap <M-b> <S-Left>
 
-source ~/.config/nvim/ack.vim
-source ~/.config/nvim/coc.vim
-source ~/.config/nvim/completions.vim
-source ~/.config/nvim/fzf.vim
-source ~/.config/nvim/prettier.vim
-source ~/.config/nvim/whitespace.vim
+" source ~/.config/nvim/ack.vim
+" source ~/.config/nvim/coc.vim
+" source ~/.config/nvim/completions.vim
+" source ~/.config/nvim/fzf.vim
+" source ~/.config/nvim/whitespace.vim
 
-function! OrganizeImports()
-  :call CocAction('runCommand', 'editor.action.organizeImport')
-  if match(join(getline(1,'$'), "\n"), "import.*React") == -1
-    let lineno = line(".")
-    let colno = col(".")
-    :normal! ggOimport React from "react";
-    :w
-    :call cursor(lineno + 1, colno)
-  endif
-endfunction
-:command! OrganizeImports :call OrganizeImports()
+" function! OrganizeImports()
+"   :call CocAction('runCommand', 'editor.action.organizeImport')
+"   if match(join(getline(1,'$'), "\n"), "import.*React") == -1
+"     let lineno = line(".")
+"     let colno = col(".")
+"     :normal! ggOimport React from "react";
+"     :w
+"     :call cursor(lineno + 1, colno)
+"   endif
+" endfunction
+" :command! OrganizeImports :call OrganizeImports()
 
-map <leader>i :OrganizeImports<cr>
+" map <leader>i :OrganizeImports<cr>
 
-nmap gd :CocCommand tsserver.goToSourceDefinition<CR>
+" nmap gd :CocCommand tsserver.goToSourceDefinition<CR>
 
-lua require("./config")
+lua require("./init_completion")
+lua require("./init_lsp")
+lua require("./init_tree")
+lua require("./init_telescope")
+lua require("./init_prettierd")
+lua require("./init_treesitter")
 nnoremap <silent> <leader><space> :Telescope find_files<cr>
 nnoremap <silent> <leader>b :Telescope buffers<cr>
 nnoremap <silent> <leader>f :Telescope live_grep<cr>
 nnoremap <silent> <leader>F :Telescope grep_string<cr>
+
+" let g:ale_fixers = {
+"       \ 'javascript': ['prettier'],
+"       \ 'typescript': ['prettier'],
+"       \ 'typescriptreact': ['prettier'],
+"       \ 'tsx': ['prettier'],
+"       \}
+" let g:ale_fix_on_save = 1
+""
+"let g:prettier#autoformat = 1
+"let g:prettier#autoformat_require_pragma = 0
+"let g:prettier#exec_cmd_async = 1
+
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.html PrettierAsync
