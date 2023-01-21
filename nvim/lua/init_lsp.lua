@@ -30,6 +30,13 @@ require('lspconfig')['tsserver'].setup{
   capabilities = capabilities
 }
 
+require('lspconfig')['luau_lsp'].setup{
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities
+}
+
+
 local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
@@ -52,4 +59,3 @@ vim.diagnostic.config(config)
 
 vim.o.updatetime = 250
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
-

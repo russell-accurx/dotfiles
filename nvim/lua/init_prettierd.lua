@@ -4,7 +4,22 @@ require("null-ls").setup({
   sources = {
     require("null-ls").builtins.formatting.prettierd.with({
       filetypes = {
-        "tsx", "jsx", "typescriptreact", "javascriptreact", "javascript","typescript","css","scss","html","json","yaml","markdown","graphql","md","txt",
+        "tsx",
+        "jsx",
+        "typescriptreact",
+        "javascriptreact",
+        "javascript",
+        "typescript",
+        "css",
+        "scss",
+        "html",
+        "json",
+        "yaml",
+        "markdown",
+        "graphql",
+        "md",
+        "txt",
+        "lua",
       },
     }),
   },

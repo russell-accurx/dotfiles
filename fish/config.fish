@@ -13,7 +13,8 @@ alias glog 'git log --pretty=format:"%C(auto)%h - %<(80,trunc)%s %Cgreen(%cr) %C
 alias gpo 'git push -u origin (git rev-parse --abbrev-ref HEAD)'
 
 # paths
-set -gx CDPATH $CDPATH $HOME $HOME/Code
+set -gx CDPATH $CDPATH $HOME $HOME/Code $HOME/Code/rosemary/src/Web
+set -gx PATH ./node_modules/.bin $PATH
 
 # fzf
 set -gx FZF_DEFAULT_COMMAND 'rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*,build/*,dist/*,.next/*,.yalc/*}"'
