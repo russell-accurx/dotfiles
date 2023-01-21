@@ -14,7 +14,8 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'vsnip' },
-    { name = 'nvim_lua' }
+    { name = 'nvim_lua' },
+    { name = 'fish' }
   }, {
     { name = 'buffer' },
   })
