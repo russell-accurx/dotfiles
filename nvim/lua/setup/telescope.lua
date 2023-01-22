@@ -25,3 +25,8 @@ telescope.setup({
     }
   },
 })
+
+vim.keymap.set('n', '<leader><space>', ':Telescope find_files<cr>', { noremap = true })
+vim.keymap.set('n', '<leader>b', ':Telescope buffers<cr>', { noremap = true })
+vim.keymap.set('n', '<leader>f', ':Telescope live_grep<cr>', { noremap = true })
+vim.keymap.set('n', '<leader>F', ':Telescope grep_string<cr>', { noremap = true })

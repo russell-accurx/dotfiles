@@ -1,7 +1,5 @@
 nvim/.netrwhist
-nvim/vim-plug
-nvim/autoload
-nvim/plugged
+nvim/plugin
 Alfred.alfredpreferences/
 .DS_Store
 Brewfile.lock.json
