@@ -1,4 +1,3 @@
-lua << EOF
 mapleader = ','
 vim.g.mapleader = ','
 vim.g.maplocalleader = ','
@@ -8,4 +7,3 @@ vim.g.loaded_netrwPlugin = 1
 require "options"
 require "mappings"
 require "plugins"
-EOF
