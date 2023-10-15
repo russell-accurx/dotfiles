@@ -1,6 +1,7 @@
 [user]
   name = Russell Dunphy
-  email = russell@russelldunphy.com
+  email = russell@accurx.com
+	signingkey = 17055B9D4D8EED4E
 
 [core]
   editor = nvim
@@ -39,3 +40,5 @@
 
 [bash]
 	showUntrackedFiles = false
+[commit]
+	gpgsign = true

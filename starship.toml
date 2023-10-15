@@ -57,8 +57,8 @@ style = "bright-white"
 format = "$ahead_behind$untracked$modified$deleted$staged"
 
 [character]
-success_symbol = "👉🏻"
-error_symbol = "👉🏻"
+success_symbol = "💡"
+error_symbol = "💡"
 
 [line_break]
 disabled = true
